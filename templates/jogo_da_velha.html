@@ -1,0 +1,34 @@
+<html>
+<head>
+    <style>
+        #jogo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0px;
+        }
+
+        .tile {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+
+Jogador 1 (X): {{jogador1}}
+Jogador 2 (O): {{jogador2}}
+
+Proximo a jogar: {{proximo}}
+
+<div id="jogo">
+    {% for tile in board %}
+    {% if tile is None %}
+    <a href="?tile={{forloop.counter}}"><div class="tile"></div></a>
+    {% else %}
+    <div class="tile">{{tile}}</div>
+    {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>
