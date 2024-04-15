@@ -1,0 +1,6 @@
+<form action="/jogo-da-velha/" method="post">
+    <label> Jogo: </label><input type="text" name="jogo" value="{{id_jogo}}"><br>
+    <label> Senha: </label><input type="text" name="senha"><br>
+    <button type="submit">Entrar</button>
+    {% csrf_token %}
+</form>

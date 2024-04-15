@@ -2,16 +2,20 @@
 
 <body>
     <li>
-        <form action="/jogo-da-velha/novo">
+        <form action="/jogo-da-velha/novo" method="post">
             Novo Jogo<br>
             <label> Jogador 1: </label><input type="text" name="jogador1"><br>
             <label> Jogador 2: </label><input type="text" name="jogador2"><br>
+            <label> Senha: </label><input type="text" name="senha"><br>
             <button type="submit">Criar</button>
+            {% csrf_token %}
         </form>
-        <form action="/jogo_da_velha">
+        <form action="/jogo-da-velha/" method="post">
             <label>Selecione um Jogo: </label><input type="text" name="jogo">
             <button type="submit">Entrar</button>
+            {% csrf_token %}
         </form>
+        <a href="/jogos-anteriores">Jogos anteriores</a>
     </li>
 </body>
 </html>

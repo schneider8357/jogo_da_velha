@@ -24,4 +24,5 @@ urlpatterns = [
     path("", views.index),
     path("jogo-da-velha/", views.jogo_da_velha),
     path("jogo-da-velha/novo", views.novo_jogo_da_velha),
+    path("jogos-anteriores/", views.jogos_anteriores),
 ]

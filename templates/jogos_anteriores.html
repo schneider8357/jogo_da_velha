@@ -1,0 +1,26 @@
+
+<h1>Jogos Anteriores</h1>
+
+<a href="/">Voltar para o início</a>
+<table>
+    <tr>
+        <th>#Jogo</th>
+        <th>Jogador 1</th>
+        <th>Jogador 2</th>
+        <th>Vencedor</th>
+        <th>Proximo</th>
+        <th>Data Início</th>
+    </tr>
+    {% for jogo in jogos %}
+    <tr>
+        <td>{{jogo.id}}</td>
+        <td>{{jogo.jogador1}}</td>
+        <td>{{jogo.jogador2}}</td>
+        <td>{{jogo.venc}}</td>
+        <td>{{jogo.proximo}}</td>
+        <td>{{jogo.datahora}}</td>
+        <td><a href="#">Editar</a></td>
+        <td><a href="#">Remover</a></td>
+    </tr>
+    {% endfor %}
+</table>

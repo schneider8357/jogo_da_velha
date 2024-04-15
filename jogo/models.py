@@ -19,3 +19,4 @@ class Jogo(models.Model):
     proximo = models.IntegerField(default=1)
     datahora = models.DateTimeField(auto_now_add=True)
     board = models.OneToOneField(Board, on_delete=models.CASCADE)
+    senha = models.CharField(max_length=24, blank=True)
