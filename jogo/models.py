@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 
 class Board(models.Model):
@@ -13,8 +14,8 @@ class Board(models.Model):
     tile8 = models.CharField(max_length=1, null=True, default=None)
 
 class Jogo(models.Model):
-    jogador1 = models.CharField(max_length=255)
-    jogador2 = models.CharField(max_length=255)
+    jogador1 = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name="jogador1_user")
+    jogador2 = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, related_name="jogador2_user")
     venc = models.CharField(max_length=255)
     proximo = models.IntegerField(default=1)
     datahora = models.DateTimeField(auto_now_add=True)

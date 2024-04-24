@@ -1,6 +1,11 @@
 <html>
 
 <body>
+    {% if user.username %}
+    Logado como: {{ user.username }}
+    {% else %}
+    <a href="/login">Entre agora</a>
+    {% endif %}
     <li>
         <form action="/jogo-da-velha/novo" method="post">
             Novo Jogo<br>
